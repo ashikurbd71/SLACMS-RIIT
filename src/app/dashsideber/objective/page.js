@@ -77,12 +77,15 @@ export default function Objective() {
         
         </Link>
 
-           <button
+          <Link href="/dashsideber/education">
+          <button
               type="submit"
               className="inline-flex justify-center py-2 font-semibold px-4 border border-transparent bg-[#12284c] shadow-sm text-md  rounded-md text-white  hover:bg-black"
             >
               Next : Education
             </button>
+          
+          </Link>
          </div>
 
            </div>

@@ -2,37 +2,53 @@
 
 import { useFormik } from "formik";
 import Link from "next/link";
+import { useStep } from "../setprovider/page";
 import { useRouter } from "next/navigation";
 
 export default function ContecInfo() {
+  const { nextStep } = useStep();
   const router = useRouter();
-
   const formik = useFormik({
     initialValues: {
       email: "",
+      name: "",
+      Surname: "",
+      prosasion: "",
+      city: "",
+      country: "",
+      phone: "",
+      linkeind: "",
+      protfolio: "",
+      github: "",
     },
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      console.log(values);
+      nextStep();
+      router.push('/steps/2');
     },
   });
 
+
+
   return (
     <div className="w-full   mb-5 mx-auto">
-      <button
-        onClick={() => router.back()}
-        className="flex items-center space-x-1 text-[#12284c] font-bold hover:text-blue-700 transition-colors duration-200"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          className="w-6 h-6"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
-        </svg>
-        <span>Back</span>
-      </button>
+     <Link href="/createcv">
+     <button
+    
+    className="flex items-center space-x-1 text-[#12284c] font-bold hover:text-blue-700 transition-colors duration-200"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      className="w-6 h-6"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+    </svg>
+    <span>Back</span>
+  </button>
+     </Link>
       <div className="py-6">
 
   <h1 className="font-bold text-3xl">What’s the best way for employers to <br/> contact you?</h1>
