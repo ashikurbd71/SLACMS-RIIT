@@ -6,7 +6,7 @@ import { FaCheckCircle } from 'react-icons/fa';
 import { useStep } from './setprovider/page';
 
 export default function Layout({ children }) {
-  const steps = [ { number: 1, label: 'Contact' }, { number: 2, label: 'Objective' }, { number: 3, label: 'Education' }, { number: 4, label: 'Skill' }, { number: 5, label: 'Project' }, { number: 6, label: 'Languages' }, { number: 7, label: 'Finalize' }, ];
+  const steps = [ { number: 1, label: 'Contact' }, { number: 2, label: 'Objective' }, { number: 3, label: 'Education' }, { number: 4, label: 'Skills' }, { number: 5, label: 'Projects' }, { number: 6, label: 'Languages' }, { number: 7, label: 'Finalize' }, ];
   const { currentStep , goToStep } = useStep();
 
   return (
