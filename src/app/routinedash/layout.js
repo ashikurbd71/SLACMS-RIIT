@@ -7,7 +7,7 @@ import { useStep } from '../dashsideber/setprovider/page';
 
 
 export default function RoutineLayout({ children }) {
-  const steps = [ { number: 1, label: 'Contact' }, { number: 2, label: 'Objective' }, { number: 3, label: 'Education' }, { number: 4, label: 'Skills' }, { number: 5, label: 'Projects' }, { number: 6, label: 'Languages' }, { number: 7, label: 'Finalize' }, ];
+  const steps = [ { number: 1, label: 'Information' }, { number: 2, label: 'Time & Period' }, { number: 3, label: 'Sunday' }, { number: 4, label: 'Monday' }, { number: 5, label: 'Tuesday' }, { number: 6, label: 'Wednesday' }, { number: 7, label: 'Thursday' }, { number: 8, label: 'Finalize' }];
   const { currentStep , goToStep } = useStep();
 
   return (
