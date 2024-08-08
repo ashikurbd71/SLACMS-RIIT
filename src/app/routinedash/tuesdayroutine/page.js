@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function Info() {
+export default function Thesday() {
   const router = useRouter();
 
   // Initialize state for periods
@@ -78,15 +78,20 @@ export default function Info() {
         </button>
       </Link>
       <div className="py-6">
-        <h1 className="font-bold text-3xl">Proven Strategies for Effective and Efficient Time <br/> Management Skills</h1>
-        <p className="font-normal text-gray-500 pt-2 text-lg">We suggest including time and class period</p>
+        <h1 className="font-bold text-3xl">Step : 3 - Set here your <span className="text-red-600 text-4xl font-extrabold">Tuesday</span> class routine</h1>
+        <p className="font-normal text-gray-500 pt-2 text-lg">We suggest including subject, time, teacher name, and class period</p>
       </div>
       <div className="mb-10">
-        <div className="bg-white w-[1000px] h-[400px]">
+        <div className="bg-white w-[1000px] ">
           <form onSubmit={formik.handleSubmit} className="space-y-4 w-[800px]">
             <div className="grid grid-cols-1 gap-5">
               {periods.map((period, index) => (
+
+               
+            
+
                 <div key={index} className="grid grid-cols-1 gap-5 items-end">
+                      <h1 className="text-xl py-8 text-red-600 font-bold">Period - {index + 1 }</h1>
                   <div>
                     <label htmlFor={`period-${index}`} className="block text-sm font-semibold text-gray-900">Period</label>
                     <input
@@ -123,11 +128,68 @@ export default function Info() {
                     />
                   </div>
               </div>
-               
-                
-              
+                  <div>
+                    <label htmlFor={`subjectName-${index}`} className="block text-sm font-semibold text-gray-900">Subject Name</label>
+                    <input
+                      id={`subjectName-${index}`}
+                      name="subjectName"
+                      type="text"
+                      placeholder="e.g Math"
+                      onChange={(event) => handlePeriodChange(index, event)}
+                      value={period.subjectName}
+                      className="mt-1 p-3 block w-full border text-lg text-gray-600 border-gray-400 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor={`subjectCode-${index}`} className="block text-sm font-semibold text-gray-900">Subject Code</label>
+                    <input
+                      id={`subjectCode-${index}`}
+                      name="subjectCode"
+                      type="text"
+                      placeholder="e.g MATH101"
+                      onChange={(event) => handlePeriodChange(index, event)}
+                      value={period.subjectCode}
+                      className="mt-1 p-3 block w-full border text-lg text-gray-600 border-gray-400 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor={`roomNumber-${index}`} className="block text-sm font-semibold text-gray-900">Room Number</label>
+                    <input
+                      id={`roomNumber-${index}`}
+                      name="roomNumber"
+                      type="text"
+                      placeholder="e.g 101"
+                      onChange={(event) => handlePeriodChange(index, event)}
+                      value={period.roomNumber}
+                      className="mt-1 p-3 block w-full border text-lg text-gray-600 border-gray-400 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor={`teacherName-${index}`} className="block text-sm font-semibold text-gray-900">Teacher Name</label>
+                    <input
+                      id={`teacherName-${index}`}
+                      name="teacherName"
+                      type="text"
+                      placeholder="e.g John Doe"
+                      onChange={(event) => handlePeriodChange(index, event)}
+                      value={period.teacherName}
+                      className="mt-1 p-3 block w-full border text-lg text-gray-600 border-gray-400 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    />
+                  </div>
                  
-                
+                  <div>
+                    <label htmlFor={`phoneNumber-${index}`} className="block text-sm font-semibold text-gray-900">Phone Number</label>
+                    <input
+                      id={`phoneNumber-${index}`}
+                      name="phoneNumber"
+                      type="tel"
+                      placeholder="e.g 123-456-7890"
+                      onChange={(event) => handlePeriodChange(index, event)}
+                      value={period.phoneNumber}
+                      className="mt-1 p-3 block w-full border text-lg text-gray-600 border-gray-400 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    />
+                  </div>
+               
                   <div>
                     {index > 0 && (
                       <button
@@ -151,34 +213,30 @@ export default function Info() {
                 </button>
               </div>
             </div>
-          <div className="flex justify-between ">  
-            
-            <div></div>
-            
-             <div className="flex gap-5 items-center">
-            <Link href="/routinedash/routinetitle">
+            <div className="flex  justify-between">
+
+<div></div>
+
+<div className="flex gap-5 items-center">
+            <Link href="/routinedash/mondayroutine">
 <div
 
 className="inline-flex justify-center py-2 font-semibold px-4 border border-transparent bg-[#FFC85E] shadow-sm text-md  rounded-md text-[#12284c]  hover:bg-red-500"
 >
-Preview : Information
+Preview : Monday
 </div>
 
 </Link>
-              <Link href="/routinedash/sundayroutine">
+              <Link href="/routinedash/wednesdayroutine">
                 <button
                   type="submit"
                   className="inline-flex justify-center py-2 font-semibold px-4 border border-transparent bg-[#12284c] shadow-sm text-md rounded-md text-white hover:bg-black"
                 >
-                  Next : Sunday
+                  Next : Wednesday
                 </button>
               </Link>
             </div>
-
-
-
-
-          </div>
+            </div>
           </form>
         </div>
       </div>

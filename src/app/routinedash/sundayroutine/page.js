@@ -78,7 +78,7 @@ export default function sunday() {
         </button>
       </Link>
       <div className="py-6">
-        <h1 className="font-bold text-3xl">Step : 1 - Set here your Sunday class routine</h1>
+        <h1 className="font-bold text-3xl">Step : 1 - Set here your <span className="text-red-600 text-4xl font-extrabold">Sunday</span> class routine</h1>
         <p className="font-normal text-gray-500 pt-2 text-lg">We suggest including subject, time, teacher name, and class period</p>
       </div>
       <div className="mb-10">
@@ -86,7 +86,12 @@ export default function sunday() {
           <form onSubmit={formik.handleSubmit} className="space-y-4 w-[800px]">
             <div className="grid grid-cols-1 gap-5">
               {periods.map((period, index) => (
+
+               
+            
+
                 <div key={index} className="grid grid-cols-1 gap-5 items-end">
+                      <h1 className="text-xl text-red-600  py-8 font-bold">Period - {index + 1 }</h1>
                   <div>
                     <label htmlFor={`period-${index}`} className="block text-sm font-semibold text-gray-900">Period</label>
                     <input
